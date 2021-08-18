@@ -1,6 +1,7 @@
 ---
 
 - name: "Configuring Banners"
+  connection: ansible.netcommon.network_cli
   gather_facts: false
   hosts: all
 
