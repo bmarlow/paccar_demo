@@ -1,0 +1,11 @@
+[all:vars]
+ansible_connection=ansible.netcommon.network_cli
+ansible_user=bmarlow
+
+[ios]
+r1 ansible_host=192.168.122.201
+r2 ansible_host=192.168.122.202
+r3 ansible_host=192.168.122.203
+
+[ios:vars]
+ansible_network_os=ios

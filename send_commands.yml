@@ -1,0 +1,26 @@
+---
+
+- name: "Network Getting Started Playbook"
+  gather_facts: false
+  hosts: all
+
+  tasks:
+
+    # - name: "Collect Cisco Facts"
+    #   cisco.ios.ios_facts:
+    #     gather_subset: all
+    #   register: ios_facts
+
+    # - name: "Print Out the facts"
+    #   debug:
+    #     var: ios_facts.ansible_facts.ansible_net_hostname
+
+    - name: "Get BGP neighbors"
+      cisco.ios.ios_command:
+        commands: "show ip bgp sum"
+      register: bgp_neighbors
+
+    - name: "Print BGP Neighbors"
+      debug:
+        var: bgp_neighbors
+
